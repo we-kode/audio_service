@@ -1,6 +1,6 @@
 ## 0.18.15
 
-* Add deep link support for FlutterFragmentActivity (@jan-milovanovic)
+* Add deep link support for FlutterFragmentActivity (@jan-milovanovic).
 
 ## 0.18.14
 
