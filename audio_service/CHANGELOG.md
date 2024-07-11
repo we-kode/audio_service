@@ -1,3 +1,7 @@
+## 0.18.15
+
+* Add deep link support for FlutterFragmentActivity (@jan-milovanovic)
+
 ## 0.18.14
 
 * Support rxdart 0.28.x.
