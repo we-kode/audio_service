@@ -1,6 +1,7 @@
 ## 0.18.15
 
 * Add deep link support for FlutterFragmentActivity (@jan-milovanovic).
+* Fix JDK 21 compile error.
 
 ## 0.18.14
 
