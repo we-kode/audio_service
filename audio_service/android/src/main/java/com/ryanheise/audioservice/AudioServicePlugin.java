@@ -551,12 +551,13 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
                 audioHandlerInterface.invokeMethod("getChildren", args, new MethodChannel.Result() {
                     @Override
                     public void error(String errorCode, String errorMessage, Object errorDetails) {
-                        result.sendError(new Bundle());
+                        setErrorState(errorCode, errorMessage);
+                        result.sendResult(null);
                     }
 
                     @Override
                     public void notImplemented() {
-                        result.sendError(new Bundle());
+                        result.sendResult(null);
                     }
 
                     @Override
@@ -583,12 +584,13 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
                 audioHandlerInterface.invokeMethod("getMediaItem", args, new MethodChannel.Result() {
                     @Override
                     public void error(String errorCode, String errorMessage, Object errorDetails) {
-                        result.sendError(new Bundle());
+                        setErrorState(errorCode, errorMessage);
+                        result.sendResult(null);
                     }
 
                     @Override
                     public void notImplemented() {
-                        result.sendError(new Bundle());
+                        result.sendResult(null);
                     }
 
                     @Override
@@ -616,12 +618,13 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
                 audioHandlerInterface.invokeMethod("search", args, new MethodChannel.Result() {
                     @Override
                     public void error(String errorCode, String errorMessage, Object errorDetails) {
-                        result.sendError(new Bundle());
+                        setErrorState(errorCode, errorMessage);
+                        result.sendResult(null);
                     }
 
                     @Override
                     public void notImplemented() {
-                        result.sendError(new Bundle());
+                        result.sendResult(null);
                     }
 
                     @Override
@@ -1018,6 +1021,25 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
         private void destroy() {
             if (silenceAudioTrack != null)
                 silenceAudioTrack.release();
+        }
+
+        private void setErrorState(String errorCode, String errorMessage)  {
+            AudioService.instance.setState(
+                    new ArrayList<MediaControl>(),
+                    0,
+                    null,
+                    AudioProcessingState.error,
+                    false,
+                    0,
+                    0,
+                    0,
+                    0,
+                    Integer.parseInt(errorCode),
+                    errorMessage,
+                    0,
+                    0,
+                    false,
+                    0L);
         }
     }
 
