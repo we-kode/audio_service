@@ -1,3 +1,6 @@
+## 0.18.16
+* Fix error handling in onLoadChildren, onLoadItem and onSearch (@dsst95)
+
 ## 0.18.15
 
 * Add deep link support for FlutterFragmentActivity (@jan-milovanovic).
