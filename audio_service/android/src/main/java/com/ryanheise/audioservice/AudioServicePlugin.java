@@ -1039,7 +1039,7 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
                     0,
                     0,
                     false,
-                    0L);
+                    null);
         }
     }
 
